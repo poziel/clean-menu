@@ -30,7 +30,7 @@ def test_children_menu_creation():
     assert child.parent_menu == menu
     assert child.main_menu == menu
 
-def dummy_callback(clean_menu):
+def dummy_callback():
     pass
 
 def test_clean_menu_initialization_defaults():
@@ -92,10 +92,10 @@ def test_display_options_visibility(monkeypatch):
     assert ("c", "Option C") not in menu.groups["group1"]["options"]
 
 def test_quit_and_back_presence():
-    # Quit option is always present in a root menu
+    # Quit option is always present in the root menu
     menu = CleanMenu(header="Root")
     assert menu.parent_menu is None
 
-    # When a parent exists, 'Back' option should be available
+    # When a parent exists, the 'Back' option should be available
     child = menu.Children(header="Child")
     assert child.parent_menu == menu

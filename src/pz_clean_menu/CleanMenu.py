@@ -175,7 +175,7 @@ class CleanMenu:
         Returns:
             CleanMenu: A new CleanMenu instance representing the child menu.
         """
-        mm = self if self.main_menu == None else self.main_menu
+        mm = self if self.main_menu is None else self.main_menu
         child_menu = CleanMenu(mm, self, header, footer, clear_console, header_color, option_color, quit_color,
                                disabled_color)
 
